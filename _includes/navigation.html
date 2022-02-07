@@ -1,11 +1,25 @@
 <div class="flex bg-gray-700 px-2 flex justify-start items-center">
   <nav class="flex text-gray-200">
-    {% for item in site.data.navigation %}
-        <a href="{{ item.link }}" 
-        {% if page.url == item.link %}class="py-1 px-2 bg-gray-400 text-black"
-        {% else %}class="py-1 px-2 hover:bg-gray-400 hover:text-gray-800"{% endif %}>
-        {{ item.name }}
+    <a href="./index.html" 
+      {% if page.url == "/index.html" or page.url == "/"  %}
+        class="py-1 px-2 bg-gray-400 text-black"
+      {% else %}
+        class="py-1 px-2 hover:bg-gray-400 hover:text-gray-800"
+      {% endif %}>
+        Home
     </a>
+    {% assign mypages = site["content"] | sort: 'order' %}
+    {% for item in mypages %}
+      {% if item.order %}
+        <a href=".{{ item.url }}.html" 
+        {% if page.url == item.url %}
+          class="py-1 px-2 bg-gray-400 text-black"
+        {% else %}
+          class="py-1 px-2 hover:bg-gray-400 hover:text-gray-800"
+        {% endif %}>
+          {{ item.title }}
+        </a>
+      {% endif %}
     {% endfor %}
   </nav>
 </div>
