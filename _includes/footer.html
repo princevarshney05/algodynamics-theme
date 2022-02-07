@@ -1,0 +1,15 @@
+<div id="footer" class="flex bg-gray-500 justify-center">
+    <h3>
+      Copyright © 2020-{{ 'now' | date: "%Y" }}, 
+      <a href="https://www.algodynamics.io" class="text-blue-800">algodynamics.io</a> 
+      {% if include.sponsor %}
+        &emsp; | &emsp; 
+          {% if include.sponsor.blurb %}
+            {{include.sponsor.blurb}}
+          {% else %}
+            Development partly supported by 
+          {% endif %}
+            <a href="{{include.sponsor.url}}" target="_blank" class="text-blue-800"> {{ include.sponsor.name }} </a>
+      {% endif %}
+    </h3> 
+</div>
