@@ -9,6 +9,11 @@
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Build settings
+collections:
+  content:
+    output: true
+    permalink: /:name
+
 markdown: kramdown
 
 plugins:
@@ -24,3 +29,6 @@ exclude:
   - package.json
   - package-lock.json
   - postcss.config.js
+  - README.md
+  - tailwind.config.js
+  - algodynamics-theme.gemspec

@@ -74,13 +74,13 @@
 
 /* class for showing color codes inside table cell */
 .color-code {
-  @apply p-2 inline-block;
+  @apply p-2 inline-block align-middle;
   background: var(--clr);
 }
 
 /* class for showing color codes with border inside table cell */
 .color-code-bordered {
-  @apply p-2 inline-block border-2;
+  @apply p-2 inline-block border-2 align-middle;
   background: var(--clr);
   border-color: var(--bd_clr);
 }
