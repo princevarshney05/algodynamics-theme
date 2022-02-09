@@ -5,23 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ page.title }}</title>
     <link
-      href="./assets/css/main.css"
+      href="{{ "/assets/css/main.css" | relative_url }}"
       rel="stylesheet"
     />
     <script src="{{ page.jsfile }}"></script>
     {% include google_analytics.html %}
   </head>
   <body class="flex flex-col h-screen overflow-hidden">
-    <div class="bg-gray-800 text-white text-xl font-medium py-4 px-2">
-      {{ page.title}}
-    </div>
+    {% include header.html title=page.title %}
     {% include navigation.html %}
     <div class="flex-grow flex flex-col justify-between py-4 px-48 text-gray-900 text-lg overflow-y-scroll">
       <div class="flex flex-col py-3">
         {{content}}
   
         <ol class="w-3/4 list-decimal list-inside text-2xl text-blue-600 bg-gray-100 p-6 rounded-lg shadow-md self-center">
-          {% assign mypages = site["content"] | sort: 'order' %}
+          {% assign mypages = site["experiments"] | sort: 'order' %}
           {% for item in mypages %}
             {% if item.order %}
               <li>

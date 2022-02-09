@@ -10,9 +10,8 @@
 
 # Build settings
 collections:
-  content:
+  experiments:
     output: true
-    permalink: /:name
 
 markdown: kramdown
 

@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ page.title }}</title>
     <link
-      href="./assets/css/main.css"
-      rel="stylesheet"
+    href="{{ "/assets/css/main.css" | relative_url }}"
+    rel="stylesheet"
     />
     <script src="{{ page.jsfile }}"></script>
     {% include google_analytics.html %}
   </head>
   <body class="flex flex-col h-screen overflow-hidden">
-    <div class="bg-gray-800 text-white text-xl font-medium py-4 px-2">
-      {{ page.title}}
-    </div>
+    {% include header.html title=page.title %}
     {% include navigation.html %}
     <div class="flex-grow flex overflow-hidden">
       <div class="w-1/3 bg-gray-200 p-4 overflow-scroll">

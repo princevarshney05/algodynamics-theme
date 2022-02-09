@@ -1,6 +1,6 @@
 <div class="flex bg-gray-700 px-2 flex justify-start items-center">
   <nav class="flex text-gray-200">
-    <a href="./index.html" 
+    <a href="{{ "/index.html" | relative_url}}" 
       {% if page.url == "/index.html" or page.url == "/"  %}
         class="py-1 px-2 bg-gray-400 text-black"
       {% else %}
@@ -8,10 +8,15 @@
       {% endif %}>
         Home
     </a>
-    {% assign mypages = site["content"] | sort: 'order' %}
+    {% assign mypages = site["experiments"] | sort: 'order' %}
     {% for item in mypages %}
       {% if item.order %}
-        <a href=".{{ item.url }}.html" 
+        <a 
+        {% if item.url contains "html" %}
+        href="{{item.url | relative_url }}"
+        {% else %}
+        href="{{item.url | relative_url }}.html"
+        {% endif %}
         {% if page.url == item.url %}
           class="py-1 px-2 bg-gray-400 text-black"
         {% else %}
