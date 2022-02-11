@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ page.title }}</title>
-    <link
-      href="{{ "/assets/css/main.css" | relative_url }}"
-      rel="stylesheet"
-    />
-    <script src="{{ page.jsfile }}"></script>
-    {% include google_analytics.html %}
-  </head>
+  {% include head.html title=page.title %}
   <body class="flex flex-col h-screen overflow-hidden">
     {% include header.html title=page.title %}
     {% include navigation.html %}

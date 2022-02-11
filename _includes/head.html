@@ -1,0 +1,14 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ include.title }}</title>
+    <link
+    href="{{ "/assets/css/main.css" | relative_url }}"
+    rel="stylesheet"
+    />
+    <link rel="icon" href="{{"/algodynamics_logo.svg" | relative_url }}" sizes="any" type="image/svg+xml">
+    {% if include.jsfile %}
+    <script src="{{ include.jsfile }}"></script>
+    {% endif %}
+    {% include google_analytics.html %}
+</head>

@@ -9,6 +9,14 @@
 
 /* purgecss start ignore */
 
+.h-11 {
+  height: 2.75rem;
+}
+
+.w-11 {
+  width: 2.75rem;
+}
+
 /* Modified prose classes for heading elements */
 .prose h1 {
   color: #2d3748;
