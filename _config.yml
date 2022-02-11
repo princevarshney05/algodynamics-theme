@@ -17,6 +17,8 @@ markdown: kramdown
 
 plugins:
   - jekyll-postcss
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
 postcss:
   cache: false
