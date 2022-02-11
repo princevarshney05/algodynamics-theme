@@ -13,7 +13,13 @@
           {% for item in mypages %}
             {% if item.order %}
               <li>
-                <a href=".{{ item.url }}.html" >
+                <a 
+                {% if item.url contains "html" %}
+                  href="{{item.url | relative_url }}"
+                {% else %}
+                  href="{{item.url | relative_url }}.html"
+                {% endif %}
+                >
                   {{ item.title }}
                 </a>
               </li>
